@@ -1,0 +1,43 @@
+# Project: Project6
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Complex.o Distance.o PermanentEmployee.o ContractEmpolyee.o Employee.o
+LINKOBJ  = main.o Complex.o Distance.o PermanentEmployee.o ContractEmpolyee.o Employee.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Project6.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Complex.o: Complex.cpp
+	$(CPP) -c Complex.cpp -o Complex.o $(CXXFLAGS)
+
+Distance.o: Distance.cpp
+	$(CPP) -c Distance.cpp -o Distance.o $(CXXFLAGS)
+
+PermanentEmployee.o: PermanentEmployee.cpp
+	$(CPP) -c PermanentEmployee.cpp -o PermanentEmployee.o $(CXXFLAGS)
+
+ContractEmpolyee.o: ContractEmpolyee.cpp
+	$(CPP) -c ContractEmpolyee.cpp -o ContractEmpolyee.o $(CXXFLAGS)
+
+Employee.o: Employee.cpp
+	$(CPP) -c Employee.cpp -o Employee.o $(CXXFLAGS)
