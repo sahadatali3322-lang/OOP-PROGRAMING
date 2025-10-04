@@ -1,0 +1,61 @@
+# Project: Project_ and -open_ handed _lab_Sahadat-Ali
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Utils.o Logger.o OTP.o Contacts.o Transaction.o User.o Wallet.o BankMock.o Report.o Database.o Menu.o main.o
+LINKOBJ  = Utils.o Logger.o OTP.o Contacts.o Transaction.o User.o Wallet.o BankMock.o Report.o Database.o Menu.o main.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = "Project_ and -open_ handed _lab_Sahadat-Ali.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Utils.o: Utils.cpp
+	$(CPP) -c Utils.cpp -o Utils.o $(CXXFLAGS)
+
+Logger.o: Logger.cpp
+	$(CPP) -c Logger.cpp -o Logger.o $(CXXFLAGS)
+
+OTP.o: OTP.cpp
+	$(CPP) -c OTP.cpp -o OTP.o $(CXXFLAGS)
+
+Contacts.o: Contacts.cpp
+	$(CPP) -c Contacts.cpp -o Contacts.o $(CXXFLAGS)
+
+Transaction.o: Transaction.cpp
+	$(CPP) -c Transaction.cpp -o Transaction.o $(CXXFLAGS)
+
+User.o: User.cpp
+	$(CPP) -c User.cpp -o User.o $(CXXFLAGS)
+
+Wallet.o: Wallet.cpp
+	$(CPP) -c Wallet.cpp -o Wallet.o $(CXXFLAGS)
+
+BankMock.o: BankMock.cpp
+	$(CPP) -c BankMock.cpp -o BankMock.o $(CXXFLAGS)
+
+Report.o: Report.cpp
+	$(CPP) -c Report.cpp -o Report.o $(CXXFLAGS)
+
+Database.o: Database.cpp
+	$(CPP) -c Database.cpp -o Database.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
